@@ -10,8 +10,8 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    height: 250px;
-    width: 400px;
+    height: 280px;
+    width: 430px;
     background-color: hsl(217, 19%, 24%);
     border-radius: 15px;
 }
@@ -27,18 +27,25 @@
 }
 .child3{
     position: absolute;
-    top: 230px;
+    top: 260px;
     background-color:hsl(150, 100%, 66%) ;
     border-radius: 50%;
     padding: 10px;
-    height: 30px;
-    width: 30px;
+    border: none;
+    width: 40px;
+    height: 40px;
+
+}
+.child3:hover{
+    box-shadow: 0 0px 35px hsl(150, 100%, 66%);
 }
 .divider{
    width: 80%;
 }
 .btn{
- 
-    padding-bottom:4px; 
+    
+    padding-bottom:5px; 
+    height: 20px;
     background-color:hsl(150, 100%, 66%) ;
 }
+

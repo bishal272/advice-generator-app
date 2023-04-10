@@ -1,13 +1,30 @@
 import React from 'react'
 import './advice.css'
+import { useState ,useEffect} from 'react';
 
 function Advice() {
+
+  const[adviceText, setAdviceText] = useState({});
+
+  const [isClicked, setIsClicked] = useState(false); 
+
+  const handleClick= ()=>{
+    setIsClicked((prevState)=>!prevState);
+  }
+
+  useEffect(()=>{
+    fetch("https://api.adviceslip.com/advice")
+    .then(res => res.json())
+    .then(data=>{setAdviceText(data.slip)})
+  },[isClicked])
+
   return (
     <div className="parent">
-      <div className='child1'>ADVICE #</div>
-      <div className="child2">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-      <div className='child3' ><img src="/images/icon-dice.svg" className='btn' alt="" /></div>
-      <div className="child4"><img src="/images/pattern-divider-desktop.svg" className='divider' alt="" /></div>
+      <div className='child1'>ADVICE #{adviceText.id}</div>
+      <div className="child2">"{adviceText.advice}"</div>
+      <button className='child3' ><img src="/images/icon-dice.svg" className='btn' alt="" onClick={handleClick} /></button>
+      <div className="child4"  ><img src="/images/pattern-divider-desktop.svg" className='divider' alt="" /></div>
+      
 
     </div>
   )
