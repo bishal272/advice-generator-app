@@ -22,7 +22,7 @@ function Advice() {
     <div className="parent">
       <div className='child1'><h1>ADVICE #{adviceText.id}</h1></div>
       <div className="child2">"{adviceText.advice}"</div>
-      <button className='child3' aria-label="nextbtn" aria-labelledby="labelnext" value={""} role="command"><img src="/images/icon-dice.svg" className='btn' alt="" onClick={handleClick} /></button>
+      <button className='child3' aria-label="nextbtn" aria-labelledby="labelnext" value={""} role="button"><img src="/images/icon-dice.svg" className='btn' alt="" onClick={handleClick} /></button>
       <div className="child4"  ><img src="/images/pattern-divider-desktop.svg" className='divider' alt="" /></div>
       
 
